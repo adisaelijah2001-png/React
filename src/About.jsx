@@ -9,7 +9,7 @@ const About = () => {
     ]);
     return (
         <div className='About'>
-           <BlockList blogs={blogs} title="All blogs" />
+           <BlogList blogs={blogs} title="All blogs" />
         </div>
     );
 }
