@@ -38,3 +38,7 @@ button {
   font-size: 20px;
   margin-bottom: 8px;
 }
+.blog-preview p{
+  font-size: 10px;
+  opacity: 0.9;
+}
