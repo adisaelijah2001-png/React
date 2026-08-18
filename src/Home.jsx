@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const Home = () => {
   const [count, setCount] = useState(0);
+ 
 
   useEffect(() => {
     console.log('count changed:', count);
@@ -11,7 +12,7 @@ const Home = () => {
     <div>
       <h2>{count}</h2>
       
-      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <button onClick={() => setCount((current) => current + 1)}>Increase</button>
     </div>
   );
  };
