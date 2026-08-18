@@ -1,21 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
-  const [name, setName] = useState("mario");
-  const [age, setAge] = useState(24);
+  const [count, setCount] = useState(0);
 
-  const handclick = () => {
-    setName("Alonge");
-    setAge(30);
-  };
-
+  useEffect(() => {
+    console.log('count changed:', count);
+  }, [count]);
+ 
   return (
     <div>
-      <h2>Homepage</h2>
-      <p>{name} is {age} years old</p>
-      <button onClick={handclick}>Click me</button>
+      <h2>{count}</h2>
+      
+      <button onClick={() => setCount(count + 1)}>Increase</button>
     </div>
   );
-};
-
+ };
 export default Home;

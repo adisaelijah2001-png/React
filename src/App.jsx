@@ -1,7 +1,7 @@
 import './App.css'
 import Navbar from './Navbar';
 import Home from './Home';
-import About from './About';
+// import About from './About';
 
 function App() {
   return(
@@ -10,7 +10,7 @@ function App() {
       <h1>This name is good</h1>
       <Home />
       <div className="about-me">
-         <About />
+         {/* <About /> */}
       </div>
     </div>
     
