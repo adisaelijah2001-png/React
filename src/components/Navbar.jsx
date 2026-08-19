@@ -22,7 +22,12 @@ export default function Navbar(){
 
         <nav className={`nav ${open ? 'open' : ''}`} aria-label="Main navigation">
           {navItems.map(item => (
-            <NavLink key={item.to} to={item.to} className="nav-link" onClick={() => setOpen(false)}>
+            <NavLink
+              key={item.to}
+              to={item.to}
+              onClick={() => setOpen(false)}
+              className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+            >
               {item.label}
             </NavLink>
           ))}

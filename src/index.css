@@ -1,29 +1,34 @@
 :root{
-	--accent: #6b2e2e; /* deep burgundy */
-	--navy: #0b2140;
+	--primary: #0B1F3A; /* Deep Navy */
+	--secondary: #173F7A; /* Royal Blue */
+	--accent: #C9A227; /* Gold */
+	--cream: #F7F3EA; /* Warm Cream */
+	--white: #FFFFFF;
+	--text: #111827;
 	--muted: #6b7280;
 	--container: 1100px;
 }
 
 *{box-sizing:border-box}
-body{font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:#0f1724; line-height:1.6; margin:0}
+body{font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:var(--text); line-height:1.6; margin:0;background:var(--cream)}
 .container{max-width:var(--container);margin:0 auto;padding:2rem}
 
-.site-header{background:#fff;position:sticky;top:0;z-index:40;border-bottom:1px solid #eee}
+.site-header{background:var(--primary);position:sticky;top:0;z-index:40;box-shadow:0 4px 18px rgba(2,6,23,0.25)}
 .nav-row{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
-.brand{font-weight:700;color:var(--navy);text-decoration:none}
-.brand .branch{display:block;font-weight:500;font-size:0.85rem;color:var(--muted)}
+.brand{font-weight:700;color:var(--white);text-decoration:none}
+.brand .branch{display:block;font-weight:500;font-size:0.85rem;color:rgba(255,255,255,0.85)}
 
 .nav{display:flex;gap:1rem;align-items:center}
-.nav-link{color:var(--navy);text-decoration:none;padding:0.5rem}
+.nav-link{color:rgba(255,255,255,0.92);text-decoration:none;padding:0.5rem}
 .nav-link.active{color:var(--accent)}
 .btn{display:inline-block;padding:0.6rem 1rem;border-radius:8px;border:1px solid transparent;text-decoration:none}
-.btn.primary{background:var(--accent);color:#fff}
+.btn.primary{background:var(--accent);color:var(--primary);font-weight:600}
+.btn.secondary{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.18)}
 
-.mobile-toggle{display:none;background:none;border:0}
+.mobile-toggle{display:none;background:none;border:0;color:var(--white)}
 
-.hero{background-size:cover;background-position:center;color:#fff;padding:6rem 0;position:relative}
-.hero-overlay{background:linear-gradient(rgba(6,10,20,0.45), rgba(6,10,20,0.45));padding:4rem 0}
+.hero{background-size:cover;background-position:center;color:var(--white);padding:6rem 0;position:relative}
+.hero-overlay{background:linear-gradient(rgba(11,31,58,0.65), rgba(11,31,58,0.65));padding:4rem 0}
 .hero h1{font-size:2.25rem;margin-bottom:0.5rem}
 .hero p{max-width:54ch;margin-bottom:1rem}
 .hero-actions a{margin-right:0.5rem}
@@ -36,13 +41,13 @@ body{font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Ro
 @keyframes slideUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
 /* Section backgrounds to avoid all-white look */
-.services{background:linear-gradient(180deg, #fbfbfd 0%, #ffffff 100%);padding:3rem;border-radius:12px;margin:2rem 0}
-.sermons{background:linear-gradient(180deg, #ffffff 0%, #fbfbf7 100%);padding:3rem;border-radius:12px;margin:2rem 0}
-.events{background:linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);padding:3rem;border-radius:12px;margin:2rem 0}
+.services{background:var(--cream);padding:3rem;border-radius:12px;margin:2rem 0}
+.sermons{background:var(--cream);padding:3rem;border-radius:12px;margin:2rem 0}
+.events{background:var(--white);padding:3rem;border-radius:12px;margin:2rem 0}
 
 /* Buttons and links hover/transition */
 .btn{transition:transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease}
-.btn:hover, .nav-link:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(11,33,64,0.08)}
+.btn:hover, .nav-link:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(11,31,64,0.08)}
 .nav-link{transition:color 160ms ease, transform 160ms ease}
 
 /* Card hover */
@@ -62,18 +67,18 @@ body{font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Ro
 .cols-2{grid-template-columns:repeat(2,1fr)}
 .cols-3{grid-template-columns:repeat(3,1fr)}
 
-.card{background:#fff;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,0.06);padding:1rem}
+.card{background:var(--cream);border-radius:10px;box-shadow:0 8px 26px rgba(2,6,23,0.06);padding:1rem;border:1px solid rgba(11,31,58,0.04)}
 .sermon-card .meta,.event-card .meta{color:var(--muted);font-size:0.9rem}
 .event-card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
 
-.cta{background:linear-gradient(180deg, #fff 0%, #fbf7f6 100%);padding:3rem 0;text-align:center}
+.cta{background:linear-gradient(180deg, var(--primary) 0%, rgba(11,31,58,0.92) 100%);padding:3rem 0;text-align:center;color:var(--white)}
 
-.site-footer{background:#f8fafc;padding:2rem 0;margin-top:2rem}
+.site-footer{background:var(--primary);padding:2rem 0;margin-top:2rem;color:var(--white)}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
-.footer-bottom{text-align:center;padding-top:1rem;color:var(--muted)}
+.footer-bottom{text-align:center;padding-top:1rem;color:rgba(255,255,255,0.75)}
 
 .contact-form{display:flex;flex-direction:column;gap:0.75rem}
-.contact-form input,.contact-form textarea{padding:0.6rem;border-radius:8px;border:1px solid #e6e9ee}
+.contact-form input,.contact-form textarea{padding:0.6rem;border-radius:8px;border:1px solid rgba(11,31,58,0.08);background:#fff}
 .form-status{padding:0.6rem;border-radius:8px}
 .form-status.error{background:#fee2e2;color:#991b1b}
 .form-status.success{background:#ecfdf5;color:#065f46}
@@ -84,7 +89,30 @@ body{font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Ro
 }
 @media (max-width:700px){
 	.cols-2,.cols-3{grid-template-columns:1fr}
-	.nav{position:fixed;top:64px;right:0;background:#fff;flex-direction:column;padding:1rem;border-left:1px solid #eee;transform:translateX(100%);transition:transform 200ms}
+	.nav{position:fixed;top:64px;right:0;background:var(--primary);flex-direction:column;padding:1rem;border-left:1px solid rgba(255,255,255,0.04);transform:translateX(100%);transition:transform 200ms}
 	.nav.open{transform:translateX(0)}
 	.mobile-toggle{display:block}
 }
+
+/* Page-specific backgrounds */
+.services{background:var(--cream)}
+.about-page{background:var(--white)}
+.discipleship-page{background:var(--primary);color:var(--white);padding:2rem;border-radius:12px;margin:2rem 0}
+.sermons{background:var(--cream)}
+.events{background:var(--white)}
+.cta{background:linear-gradient(180deg,var(--primary), rgba(11,31,58,0.95));color:var(--white)}
+
+/* Footer styles */
+.site-footer h4{color:var(--accent)}
+.site-footer h5{color:var(--accent)}
+.site-footer p, .site-footer small{color:rgba(255,255,255,0.85)}
+
+/* Service card tweaks */
+.service-card{background:var(--cream);border-left:4px solid var(--accent);padding:1.25rem}
+.service-card h3{color:var(--primary)}
+.service-card .when{font-weight:700;color:var(--secondary)}
+
+/* Buttons on dark backgrounds */
+.btn.primary.on-dark{background:var(--accent);color:var(--primary)}
+.btn.secondary{background:var(--primary);color:var(--white)}
+
