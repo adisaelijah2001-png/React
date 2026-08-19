@@ -24,9 +24,39 @@ body{font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Ro
 
 .hero{background-size:cover;background-position:center;color:#fff;padding:6rem 0;position:relative}
 .hero-overlay{background:linear-gradient(rgba(6,10,20,0.45), rgba(6,10,20,0.45));padding:4rem 0}
-.hero h1{font-size:2rem;margin-bottom:0.5rem}
+.hero h1{font-size:2.25rem;margin-bottom:0.5rem}
 .hero p{max-width:54ch;margin-bottom:1rem}
 .hero-actions a{margin-right:0.5rem}
+
+/* Animations */
+.fade-in{animation:fadeIn 700ms ease both}
+.slide-up{animation:slideUp 600ms cubic-bezier(.2,.8,.2,1) both}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes slideUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* Section backgrounds to avoid all-white look */
+.services{background:linear-gradient(180deg, #fbfbfd 0%, #ffffff 100%);padding:3rem;border-radius:12px;margin:2rem 0}
+.sermons{background:linear-gradient(180deg, #ffffff 0%, #fbfbf7 100%);padding:3rem;border-radius:12px;margin:2rem 0}
+.events{background:linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);padding:3rem;border-radius:12px;margin:2rem 0}
+
+/* Buttons and links hover/transition */
+.btn{transition:transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease}
+.btn:hover, .nav-link:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(11,33,64,0.08)}
+.nav-link{transition:color 160ms ease, transform 160ms ease}
+
+/* Card hover */
+.card{transition:transform 220ms cubic-bezier(.2,.8,.2,1),box-shadow 220ms cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(11,33,64,0.12)}
+
+/* Image transitions */
+.event-card img{transition:transform 240ms ease, filter 240ms ease}
+.event-card img:hover{transform:scale(1.03);filter:brightness(0.95)}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce){
+	.fade-in,.slide-up,.card,.btn,.nav-link,.event-card img{animation:none;transition:none}
+}
 
 .grid{display:grid;gap:1rem}
 .cols-2{grid-template-columns:repeat(2,1fr)}
