@@ -46,7 +46,7 @@ body{font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Ro
 .events{background:var(--white);padding:3rem;border-radius:12px;margin:2rem 0}
 
 /* Buttons and links hover/transition */
-.btn{transition:transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease}
+.btn{transition:transform 160ms ease, box-shadow 160ms ease, background-color: blue 160ms ease}
 .btn:hover, .nav-link:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(11,31,64,0.08)}
 .nav-link{transition:color 160ms ease, transform 160ms ease}
 
